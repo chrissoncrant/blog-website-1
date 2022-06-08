@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Joan&family=Lato:wght@100;400&family=Space+Mono&display=swap');
+
+/*
+font-family: 'Architects Daughter', cursive;
+font-family: 'Joan', serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Space Mono', monospace;
+*/
+
 :root {
     --black: black;
 }
@@ -19,7 +28,7 @@ html, body {
 body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 img, picture, video, canvas, svg {
@@ -47,8 +56,3 @@ p {
     max-width: 65ch;
 }
 
-/* Not useful to me now, but will be when I start using React */
-/* 
-#root, #__next {
-    isolation: isolate;
-} */
