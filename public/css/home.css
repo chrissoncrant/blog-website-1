@@ -8,7 +8,11 @@ font-family: 'Space Mono', monospace;
 */
 
 :root {
-    --black: black;
+    --black: #323535;
+    --lt-blue: #cee7e6;
+    --lt-green: #7ddf64;
+    --dk-green: #70b555;
+    --white: #f5f5f5;
 }
 
 *,
@@ -23,12 +27,16 @@ font-family: 'Space Mono', monospace;
 
 html, body {
     height: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     font-family: 'Lato', sans-serif;
+    color: var(--black);
+    background-color: var(--white);
+    
 }
 
 img, picture, video, canvas, svg {
@@ -58,19 +66,26 @@ p {
 
 a {
     text-decoration: none;
+    color: var(--black);
 }
 
 nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 80px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     /* border: 2px solid black; */
-    padding: 10px 45px;
-    background-color: aliceblue;
+    padding: 0 5vw;
+    background-color: #e5f3f3;
 }
 
 #nav-logo {
-    width: 80px;
+    width: 60px;
 }
 
 #nav-title {
@@ -81,11 +96,96 @@ nav {
     list-style: none;
     padding: 0;
     display: flex;
-    align-self: flex-end;
+}
+
+.nav-list-el {
+    border: 1px solid var(--black);
+    padding: 2px 7px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
 }
 
 .nav-list-el:not(:last-child) {
     margin-right: 25px;
 }
 
+.nav-list-el:hover {
+    box-shadow: 2px 2px 2px var(--black);
+    
+}
 
+.nav-list-el:active {
+    box-shadow: 1px 1px 0px var(--black);
+    opacity: 90%;
+}
+
+/* HERO SECTION */
+#hero {
+    width: 100%;
+    margin: auto;
+    height: calc(100vh - 80px);
+    /* border: 2px solid black; */
+    position: relative;
+    top: 80px;
+    display: flex;
+    color: var(--white);
+    font-size: 4em;
+    text-align: center;
+}
+
+#inner-hero-container {
+    width: 80%;
+    min-width: 950px;
+    height: 80%;
+    min-height: 600px;
+    margin: auto;
+    background: url(../images/smokey-vibes.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 20px solid var(--white);
+    box-shadow: 0px 0px 3px var(--black);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.small {
+    font-size: 0.5em;
+    display: block;
+}
+
+.outline-letters {
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+.btn-primary {
+    display: block;
+}
+
+.btn-primary:active {
+    opacity: 80%;
+}
+
+#inner-hero-container .btn-primary {
+    font-size: 0.5em;
+    border: 2px solid var(--white);
+    color: var(--white);
+    padding: 10px 50px;
+    border-radius: 24px;
+    margin-top: 25px;
+}
+
+/* Blogs Section */
+#blogs-section {
+    height: calc(100vh - 80px);
+    background-color: var(--lt-blue);
+    /* border: 2px solid black; */
+    position: relative;
+    top: 80px;
+}
