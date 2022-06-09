@@ -81,7 +81,7 @@ nav {
     align-items: center;
     /* border: 2px solid black; */
     padding: 0 5vw;
-    background-color: #e5f3f3;
+    background-color: #e5f3f3f1;
 }
 
 #nav-logo {
@@ -111,12 +111,12 @@ nav {
 }
 
 .nav-list-el:hover {
-    box-shadow: 2px 2px 2px var(--black);
+    box-shadow: 1px 1px 1px var(--black);
     
 }
 
 .nav-list-el:active {
-    box-shadow: 1px 1px 0px var(--black);
+    box-shadow: 0.5px 0.5px 0px var(--black);
     opacity: 90%;
 }
 
@@ -159,9 +159,10 @@ nav {
     display: block;
 }
 
-.outline-letters {
+.special-letters {
     text-transform: uppercase;
     font-style: italic;
+    font-family: 'Architects Daughter', cursive;
 }
 
 .btn-primary {
@@ -189,6 +190,17 @@ nav {
     /* border: 2px solid black; */
     position: relative;
     top: 80px;
+}
+
+#blogs-section-header {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 3em;
+    padding-top: 24px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+#blog-cards-section {
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(2, 1fr);
