@@ -84,41 +84,52 @@ nav {
     background-color: #e5f3f3f1;
 }
 
-#nav-logo {
-    width: 40px;
-}
+    #logo-and-title {
+        display: flex;
+        align-items: center;
+    }
 
-#nav-title {
-    margin: 0 10px;
-}
+        #nav-logo {
+            width: 40px;
+            margin-right: 3px
+        }
 
-#nav-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-}
 
-.nav-list-el {
-    border: 1px solid var(--black);
-    padding: 2px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: box-shadow 0.3s;
-}
+        nav h1 {
+            font-family: 'Architects Daughter', cursive;
+        }
 
-.nav-list-el:not(:last-child) {
-    margin-right: 25px;
-}
+            nav h1 span {
+                font-size: 1.5em;
+            }
 
-.nav-list-el:hover {
-    box-shadow: 1px 1px 1px var(--black);
-    
-}
+    #nav-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+    }
 
-.nav-list-el:active {
-    box-shadow: 0.5px 0.5px 0px var(--black);
-    opacity: 90%;
-}
+        .nav-list-el {
+            border: 1px solid var(--black);
+            padding: 2px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+        }
+
+        .nav-list-el:not(:last-child) {
+            margin-right: 25px;
+        }
+
+        .nav-list-el:hover {
+            box-shadow: 1px 1px 1px var(--black);
+            
+        }
+
+        .nav-list-el:active {
+            box-shadow: 0.5px 0.5px 0px var(--black);
+            opacity: 90%;
+        }
 
 /* HERO SECTION */
 #hero {
@@ -154,17 +165,18 @@ nav {
     position: relative;
 }
 
-.small {
-    font-size: 0.5em;
-    display: block;
-}
+    .small {
+        font-size: 0.5em;
+        display: block;
+        color: #c9c9c9;
+    }
 
-.special-letters {
-    text-transform: uppercase;
-    font-style: italic;
-    font-family: 'Architects Daughter', cursive;
-    font-size: 1.2em;
-}
+    .special-letters {
+        text-transform: uppercase;
+        font-style: italic;
+        font-family: 'Architects Daughter', cursive;
+        font-size: 1.2em;
+    }
 
 .btn-primary {
     display: block;
@@ -191,7 +203,6 @@ nav {
     position: relative;
     top: 80px;
     padding: 24px 18px;
-    border: 2px solid black;
 }
 
 #blogs-section-header {
@@ -200,6 +211,7 @@ nav {
     text-align: center;
     text-decoration: underline;
     max-width: 100%;
+    margin-bottom: 36px;
 }
 
 #blog-cards-section {
@@ -242,6 +254,7 @@ nav {
 .blog-btn {
     background-color: var(--lt-green);
     padding: 3px 24px;
+    border: 1px solid var(--dk-green);
     border-radius: 12px;
     margin-top: 24px;
     font-weight: bold;
