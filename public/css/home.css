@@ -85,7 +85,7 @@ nav {
 }
 
 #nav-logo {
-    width: 60px;
+    width: 40px;
 }
 
 #nav-title {
@@ -100,7 +100,7 @@ nav {
 
 .nav-list-el {
     border: 1px solid var(--black);
-    padding: 2px 7px;
+    padding: 2px 12px;
     border-radius: 8px;
     cursor: pointer;
     transition: box-shadow 0.3s;
@@ -146,7 +146,7 @@ nav {
     background-repeat: no-repeat;
     border: 20px solid var(--white);
     box-shadow: 0px 0px 3px var(--black);
-    border-radius: 25px;
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -163,10 +163,12 @@ nav {
     text-transform: uppercase;
     font-style: italic;
     font-family: 'Architects Daughter', cursive;
+    font-size: 1.2em;
 }
 
 .btn-primary {
     display: block;
+    background-color: rgba(255, 255, 255, 0.212);
 }
 
 .btn-primary:active {
@@ -185,19 +187,19 @@ nav {
 /* Blogs Section */
 #blogs-section {
     font-size: 18px;
-    /* height: calc(100vh - 80px); */
     background-color: var(--lt-blue);
-    /* border: 2px solid black; */
     position: relative;
     top: 80px;
+    padding: 24px 18px;
+    border: 2px solid black;
 }
 
 #blogs-section-header {
     font-family: 'Architects Daughter', cursive;
     font-size: 3em;
-    padding-top: 24px;
-    margin-bottom: 24px;
     text-align: center;
+    text-decoration: underline;
+    max-width: 100%;
 }
 
 #blog-cards-section {
@@ -205,7 +207,7 @@ nav {
     justify-items: center;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-    padding: 24px 18px;
+    
 }
 
 .blog-card {
@@ -238,7 +240,7 @@ nav {
 }
 
 .blog-btn {
-    background-color: var(--dk-green);
+    background-color: var(--lt-green);
     padding: 3px 24px;
     border-radius: 12px;
     margin-top: 24px;
