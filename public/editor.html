@@ -4,7 +4,7 @@
     <meta charset="utf-8"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chris the Dev</title>
+    <title>Blog Editor</title>
     
     <!-- Style Sheet Reset, if needed
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css">
@@ -16,10 +16,39 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/C-logo.png?v=1.1" type="image/x-icon">
 
+    <link href="css/home.css" rel="stylesheet" type="text/css">
     <link href="css/editor.css" rel="stylesheet" type="text/css">
     <!-- <script src="script.js" defer></script> -->
 </head>
 <body>
+    <nav>
+        <div id="logo-and-title">
+            <img id="nav-logo" src="images/C-logo.png" alt="pixelated letter C">
+            <h1>hris the Dev<span>.</span></h1>
+        </div>
+        <ul id="nav-list">
+            <li class="nav-list-el"><a href="./home.html" class="nav-link">Home</a></li>
+            <li class="nav-list-el"><a href="./home.html#blogs-section" class="nav-link">Blogs</a></li>
+            <li class="nav-list-el"><a href="./editor.html" class="nav-link">Editor</a></li>
+        </ul>
+    </nav>
+
+    <div id="banner">
+        <label for="banner-upload" id="banner-upload-btn"><i class="fa-solid fa-arrow-up-from-bracket" id="upload-icon"></i></label>
+        <input type="file" accept="image/*" id="banner-upload" class="upload-btn" hidden>
+    </div>
+
+    <div id="blog">
+        <textarea id="blog-title" placeholder="Blog Title..."></textarea>
+        <textarea id="blog-article" placeholder="Write stuff here..."></textarea>
+    </div>
+
+    <div id="blog-options">
+        <button class="btn-1">Publish</button>
+        <input type="file" accept="image/*" id="image-upload" hidden>
+        <label for="image-upload" class="btn-1">Upload Image</label>
+
+    </div>
 
 </body>
 </html>

@@ -79,7 +79,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* border: 2px solid black; */
     padding: 0 5vw;
     background-color: #e5f3f3f1;
 }
@@ -101,6 +100,7 @@ nav {
 
             nav h1 span {
                 font-size: 1.5em;
+                color: var(--dk-green);
             }
 
     #nav-list {
@@ -136,7 +136,6 @@ nav {
     width: 100%;
     margin: auto;
     height: calc(100vh - 80px);
-    /* border: 2px solid black; */
     position: relative;
     top: 80px;
     display: flex;
@@ -178,22 +177,19 @@ nav {
         font-size: 1.2em;
     }
 
-.btn-primary {
+#ship-btn {
     display: block;
     background-color: rgba(255, 255, 255, 0.212);
-}
-
-.btn-primary:active {
-    opacity: 80%;
-}
-
-#inner-hero-container .btn-primary {
     font-size: 0.5em;
     border: 2px solid var(--white);
     color: var(--white);
-    padding: 10px 50px;
+    padding: 5px 50px;
     border-radius: 24px;
     margin-top: 25px;
+}
+
+#ship-btn:active {
+    opacity: 80%;
 }
 
 /* Blogs Section */
@@ -251,7 +247,11 @@ nav {
     line-height: 1.3;
 }
 
-.blog-btn {
+.blog-card .read-btn {
+    align-self: flex-start;
+}
+
+.btn-1 {
     background-color: var(--lt-green);
     padding: 3px 24px;
     border: 1px solid var(--dk-green);
@@ -259,5 +259,10 @@ nav {
     margin-top: 24px;
     font-weight: bold;
     font-size: 1.2em;
-    align-self: flex-start;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.btn-1:active {
+    background-color: #7ddf64ce;
 }
