@@ -109,26 +109,27 @@ nav {
         display: flex;
     }
 
-        .nav-list-el {
-            border: 1px solid var(--black);
-            padding: 2px 12px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: box-shadow 0.3s;
-        }
-
         .nav-list-el:not(:last-child) {
             margin-right: 25px;
         }
 
-        .nav-list-el:hover {
+        .nav-link {
+            display: block;
+            border: 1px solid var(--black);
+            padding: 2px 12px;
+            border-radius: 8px;
+            transition: box-shadow 0.2s;
+        }
+
+        .nav-link:hover {
             box-shadow: 1px 1px 1px var(--black);
             
         }
 
-        .nav-list-el:active {
+        .nav-link:active {
             box-shadow: 0.5px 0.5px 0px var(--black);
             opacity: 90%;
+            transition: box-shadow 100ms;
         }
 
 /* HERO SECTION */
@@ -259,7 +260,6 @@ nav {
     margin-top: 24px;
     font-weight: bold;
     font-size: 1.2em;
-    transition: background-color 0.2s;
     cursor: pointer;
 }
 

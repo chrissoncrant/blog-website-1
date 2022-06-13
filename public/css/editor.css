@@ -33,6 +33,8 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     font-family: 'Lato', sans-serif;
+    color: var(--black);
+    background-color: var(--white);
 }
 
 img, picture, video, canvas, svg {
@@ -126,7 +128,7 @@ textarea::placeholder {
 #blog-title {
     font-size: 2em;
     font-weight: bold;
-    height: 60px;
+    height: 52px;
     padding: 0 24px;
 }
 
@@ -136,6 +138,7 @@ textarea::placeholder {
     margin-top: 24px;
     padding: 24px;
     white-space: pre-wrap;
+    line-height: 1.2;
 }
 
 #blog-options {
@@ -146,4 +149,15 @@ textarea::placeholder {
     align-items: center;
     width: 300px;
     margin: auto;
+}
+
+#image-upload-btn {
+    background-color: var(--white);
+    color: #468a2b;
+    border: 2px solid var(--dk-green);
+}
+
+#image-upload-btn:active {
+    color:#468a2bc5;
+    border: 2px solid #70b555c5;
 }
