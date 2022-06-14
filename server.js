@@ -19,23 +19,27 @@ app.get('/editor', (req, res) => {
     res.sendFile(path.join(initial_path, "editor.html"))
 })
 
-//upload link
 app.post('/upload', (req, res) => {
-    //assigns the file object's image key property, which is an object
     let file = req.files.image;
     let date = new Date();
-    let imageName = String(date.getDate()) + date.getTime() + file.name;
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
+    let uploadDate = `${day}-${month}-${year}`;
+    let fileName = `${uploadDate}-${file.name}`;
 
-    let path = 'public/uploads/' + imageName;
+    let path = `public/uploads/${fileName}`;
 
-    file.mv(path, (err, result) => {
-        if(err) {
-            res.status(500).send(err);
+    file.mv(path, (err) => {
+        if (err) {
+            res.status(500).json({
+                error: err,
+            })
         } else {
-            res.json(`uploads/${imageName}`);
+            res.json(`uploads/${fileName}`);
         }
-    });
-})
+    })
+});
 
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}...`)

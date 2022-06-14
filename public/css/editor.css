@@ -70,9 +70,6 @@ p {
     background-size: cover;
     background-position: center;
 }
-    .upload-btn {
-        cursor: pointer;
-    }
 
     #banner-upload-btn {
         background-color: rgba(255, 254, 254, 0.575);
@@ -85,7 +82,7 @@ p {
         display: flex;
         justify-content: center;
         align-items: center;
-        
+        cursor: pointer;
         box-shadow: 0px 0px 3px rgba(204, 204, 204, 0.87);
     }
 
