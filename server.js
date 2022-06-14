@@ -21,9 +21,10 @@ app.get('/editor', (req, res) => {
 
 //upload link
 app.post('/upload', (req, res) => {
+    //assigns the file object's image key property, which is an object
     let file = req.files.image;
     let date = new Date();
-    let imageName = date.getDate() + date.getTime() + file.name;
+    let imageName = String(date.getDate()) + date.getTime() + file.name;
 
     let path = 'public/uploads/' + imageName;
 

@@ -11,24 +11,26 @@ bannerImage.addEventListener('change', () => {
     uploadImage(bannerImage, 'banner');
 })
 
+
 function uploadImage(uploadFile, uploadType) {
-    console.log(uploadFile.files);
     const [file] = uploadFile.files;
 
     if(file && file.type.includes('image')) {
+        //Create a FormData object
         const formdata = new FormData();
-        formdata.append('image', file)
-        
+        //add the key and property to the formdata object
+        formdata.append('image', file);
+        //Make call to the API
         fetch('/upload', {
             method: 'post',
             body: formdata,
         })
-            .then(res => res.json())
+            .then(res => {
+                return res.json();
+            })
             .then(data => {
-                console.log('location', location.origin);
                 bannerPath = `${location.origin}/${data}`;
                 bannerContainer.style.backgroundImage = `url(${bannerPath})`;
             })
     }
-    
-}
+};
