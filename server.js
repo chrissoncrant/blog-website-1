@@ -9,6 +9,13 @@ let initial_path = path.join(__dirname, 'public');
 const app = express();
 
 app.use(express.static(initial_path));
+// app.use(express.json());
+
+// app.use((req, res, next) => {
+//     console.log(req.body);
+//     next();
+// })
+
 app.use(fileUpload());
 
 app.get('/', (req, res) => {
@@ -25,7 +32,7 @@ app.post('/upload', (req, res) => {
     let year = date.getFullYear();
     let month = date.getMonth() + 1;
     let day = date.getDate();
-    let uploadDate = `${day}-${month}-${year}`;
+    let uploadDate = `${year}-${month}-${day}`;
     let fileName = `${uploadDate}-${file.name}`;
 
     let path = `public/uploads/${fileName}`;

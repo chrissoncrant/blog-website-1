@@ -138,6 +138,12 @@ textarea::placeholder {
     line-height: 1.2;
 }
 
+.blog-article-image {
+    height: 400px;
+    width: 70%;
+    margin: auto;
+}
+
 #blog-options {
     position: relative;
     top: 80px;
