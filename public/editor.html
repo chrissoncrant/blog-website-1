@@ -18,7 +18,7 @@
 
     <link href="css/home.css" rel="stylesheet" type="text/css">
     <link href="css/editor.css" rel="stylesheet" type="text/css">
-    <!-- <script src="script.js" defer></script> -->
+    
 </head>
 <body>
     <nav>
@@ -50,6 +50,8 @@
         <label for="image-upload" id="image-upload-btn" class="btn-1">Upload Image</label>
         <input type="file" accept="image/*" id="image-upload" hidden>
     </div>
-    <script src="./js/editor.js"></script>
+
+    <script type="module" src="./js/firebase.js"></script>   
+    <script type="module" src="./js/editor.js"></script>
 </body>
 </html>
