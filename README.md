@@ -1,3 +1,3 @@
-# My Portfolio
+# My Blog
 
-This is a starting point for a portfolio 
+This is a full-stack website utilizing Nodejs for a blog. 
