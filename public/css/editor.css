@@ -62,7 +62,7 @@ p {
     max-width: 65ch;
 }
 
-#banner {
+.banner {
     height: 400px;
     position: relative;
     top: 80px;

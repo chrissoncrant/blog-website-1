@@ -5,9 +5,11 @@ import { doc, setDoc } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-f
 const titleField = document.getElementById('blog-title');
 const articleField = document.getElementById('blog-article');
 const bannerImageInput = document.getElementById('banner-upload-input');
-const bannerContainer = document.getElementById('banner');
+const bannerContainer = document.querySelector('.banner');
 const publishBtn = document.getElementById('publish-btn');
 const articleImageInput = document.getElementById('image-upload');
+
+console.log(publishBtn);
 
 let bannerPath;
 
@@ -81,7 +83,8 @@ publishBtn.addEventListener('click', () => {
                  publishedAt: `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
              })
                 .then(() => {
-                    console.log('Blog successfully added to Firestore.')
+                    console.log('Blog successfully added to Firestore.');
+                    location.href = `${docName}`;
                 })
                 .catch(err => {
                     console.error("Error while adding to database:", err);
