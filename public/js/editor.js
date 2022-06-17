@@ -24,7 +24,7 @@ articleImageInput.addEventListener('change', () => {
 function addImage(imagePath, alt) {
     let cursorPosition = articleField.selectionStart;
     //markdown syntax for the image:
-    let textToInsert = `\r![${alt}](${imagePath})\r]`;
+    let textToInsert = `\r![${alt}](${imagePath})]\r`;
 
     //adding the image's markdown syntax to the article at the cursor location:
     articleField.value = articleField.value.slice(0, cursorPosition) + textToInsert + articleField.value.slice(cursorPosition);

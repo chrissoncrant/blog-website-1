@@ -28,11 +28,53 @@ function setUpBlog(blogObj) {
     banner.style.backgroundImage = `url(${bannerImage})`;
     blogTitle.textContent = title;
     publishDate.textContent = publishedAt;
-    blogArticle.textContent = article;
+    addArticle(blogArticle, article);
 }
 
 function addArticle(articleEl, articleContent) {
+
+    console.log(articleContent);
     
+    articleContent = articleContent.split('\n').filter(item => item.length);
+
+    console.log(articleContent);
+
+    articleContent.map(item => {
+        if (item[0] === '#') {
+            let count = item.match(/#/g).length;
+            chooseHeaderElement(item, count)
+        }
+    })
+}
+
+function chooseHeaderElement(content, count) {
+    content = content.slice(count);
+    switch (count) {
+        case 1 :
+            setHeaderElement('h1', content);
+            break;
+        case 2 :
+            setHeaderElement('h2', content);
+            break;
+        case 3 :
+            setHeaderElement('h3', content);
+            break;
+        case 4 :
+            setHeaderElement('h4', content);
+            break;
+        case 5 :
+            setHeaderElement('h5', content);
+            break;
+        case 6 :
+            setHeaderElement('h6', content);
+            break;
+    }
+}
+
+function setHeaderElement(element, content) {
+    let header = document.createElement(element);
+    header.textContent = content;
+    blogArticle.appendChild(header);            
 }
 
 
