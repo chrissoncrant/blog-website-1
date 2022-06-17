@@ -62,3 +62,17 @@ p {
     max-width: 65ch;
 }
 
+.blog-title, .blog-article {
+    /* css also present in editor.css */
+    padding: 0;
+    white-space: normal;
+    min-height: auto;
+    height: fit-content;
+    color: var(--black);
+}
+
+.published {
+    text-transform: capitalize;
+    font-style: italic;
+    color: rgb(0, 0, 0, 0.5)
+}

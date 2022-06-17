@@ -17,9 +17,9 @@
     <link rel="shortcut icon" href="images/C-logo.png?v=1.1" type="image/x-icon">
 
     <link href="css/home.css" rel="stylesheet" type="text/css">
-    <link href="css/blog.css" rel="stylesheet" type="text/css">
     <link href="css/editor.css" rel="stylesheet" type="text/css">
-    <script src="./js/blog.js" defer></script>
+    <link href="css/blog.css" rel="stylesheet" type="text/css">
+    
 </head>
 <body>
     <nav>
@@ -34,13 +34,21 @@
         </ul>
     </nav>
     
-    <div class="banner"></div>
+    <div class="banner">
+    </div>
+
+    testing
+
 
     <div class="blog">
+        <h1 class="blog-title"></h1>
+        <p class="published">Published <span></span></p>
+        <div class="blog-article">
+        </div>
     </div>
 
 
-    <script type="module" src="./js/firebase.js"></script>   
-    <script type="module" src="./js/editor.js"></script>
+    <script type="module" src="./js/firebase.js"></script>
+    <script type="module" src="./js/blog.js"></script>   
 </body>
 </html>

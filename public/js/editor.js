@@ -2,14 +2,12 @@ import { db } from "./firebase.js"
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
 
 
-const titleField = document.getElementById('blog-title');
-const articleField = document.getElementById('blog-article');
+const titleField = document.querySelector('.blog-title');
+const articleField = document.querySelector('.blog-article');
 const bannerImageInput = document.getElementById('banner-upload-input');
 const bannerContainer = document.querySelector('.banner');
 const publishBtn = document.getElementById('publish-btn');
 const articleImageInput = document.getElementById('image-upload');
-
-console.log(publishBtn);
 
 let bannerPath;
 

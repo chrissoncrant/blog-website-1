@@ -90,13 +90,14 @@ p {
         font-size: 1.2em;
     }
 
-#blog {
+.blog {
     position: relative;
     top: 80px;
     width: 70vw;
     min-width: 400px;
     margin: auto;
     padding: 36px;
+    border: 2px solid black;
 }
 
 textarea {
@@ -122,14 +123,14 @@ textarea::placeholder {
     color: #323535d8;
 }
 
-#blog-title {
+.blog-title {
     font-size: 2em;
     font-weight: bold;
     height: 52px;
     padding: 0 24px;
 }
 
-#blog-article {
+.blog-article {
     height: 500px;
     font-size: 1.2em;
     margin-top: 24px;
