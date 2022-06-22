@@ -32,7 +32,6 @@ function setUpBlog(blogObj) {
 }
 
 function addArticle(articleEl, articleContent) {
-
     console.log(articleContent);
     
     articleContent = articleContent.split('\n').filter(item => item.length);
@@ -42,7 +41,12 @@ function addArticle(articleEl, articleContent) {
     articleContent.map(item => {
         if (item[0] === '#') {
             let count = item.match(/#/g).length;
-            chooseHeaderElement(item, count)
+            chooseHeaderElement(item, count);
+        } else if (item[0] === '!') {
+            let {alt, src} = parseImageText(item);
+            setImageElement(alt, src);
+        } else {
+            setParagraphElement(item);
         }
     })
 }
@@ -77,5 +81,29 @@ function setHeaderElement(element, content) {
     blogArticle.appendChild(header);            
 }
 
+function parseImageText(content) {
+    let lastBracket = content.indexOf(']');
+    let srcStart = lastBracket + 2;
+    let lastParenthesis = content.indexOf(')');
+    let imageAlt = content.slice(2, lastBracket);
+    let imageSrc = content.slice(srcStart, lastParenthesis);
+    return {
+        alt: imageAlt,
+        src: imageSrc
+    };
+}
+
+function setImageElement(alt, src) {
+    let imgEl = document.createElement('img');
+    imgEl.setAttribute('alt', alt);
+    imgEl.setAttribute('src', src);
+    blogArticle.appendChild(imgEl);
+}
+
+function setParagraphElement(content) {
+    let p = document.createElement('p');
+    p.textContent = content;
+    blogArticle.appendChild(p);
+}
 
 
