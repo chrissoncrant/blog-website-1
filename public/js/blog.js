@@ -97,6 +97,7 @@ function setImageElement(alt, src) {
     let imgEl = document.createElement('img');
     imgEl.setAttribute('alt', alt);
     imgEl.setAttribute('src', src);
+    imgEl.classList.add('article-image');
     blogArticle.appendChild(imgEl);
 }
 

@@ -50,7 +50,7 @@ input, button, textarea, select {
 }
 
 h1, h2, h3 {
-    line-height: 1.1;
+    line-height: 1.2;
 }
 
 h1, 
@@ -61,7 +61,6 @@ h5,
 h6,
 p {
     overflow-wrap: break-word;
-    max-width: 65ch;
 }
 
 a {
