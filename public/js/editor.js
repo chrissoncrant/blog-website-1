@@ -3,6 +3,7 @@ import { doc, setDoc } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-f
 
 
 const titleField = document.querySelector('.blog-title');
+const descriptionField = document.querySelector('.blog-description');
 const articleField = document.querySelector('.blog-article');
 const bannerImageInput = document.getElementById('banner-upload-input');
 const bannerContainer = document.querySelector('.banner');
@@ -29,6 +30,8 @@ function addImage(imagePath, alt) {
     //adding the image's markdown syntax to the article at the cursor location:
     articleField.value = articleField.value.slice(0, cursorPosition) + textToInsert + articleField.value.slice(cursorPosition);
 }
+
+
 
 function uploadImage(uploadFile, uploadType) {
     const [file] = uploadFile.files;
@@ -73,9 +76,11 @@ publishBtn.addEventListener('click', () => {
 
          let docName = `${blogTitle}-${id}`;
          let date = new Date();
+         console.log(descriptionField.value)
 
          setDoc(doc(db, 'blogs', docName), {
                  title: titleField.value,
+                 description: descriptionField.value,
                  article: articleField.value,
                  bannerImage: bannerPath,
                  publishedAt: `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`

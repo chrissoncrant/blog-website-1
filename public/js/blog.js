@@ -42,7 +42,7 @@ function addArticle(articleEl, articleContent) {
         if (item[0] === '#') {
             let count = item.match(/#/g).length;
             chooseHeaderElement(item, count);
-        } else if (item[0] === '!') {
+        } else if (item[0] === '!' && item[1] === '[') {
             let {alt, src} = parseImageText(item);
             setImageElement(alt, src);
         } else {

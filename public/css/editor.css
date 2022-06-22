@@ -69,10 +69,17 @@ textarea::placeholder {
 }
 
 .blog-title {
-    font-size: 4em;
+    font-size: 2em;
     font-weight: bold;
     height: 52px;
     padding: 0 24px;
+}
+
+.blog-description {
+    margin-top: 24px;
+    font-size: 1.2em;
+    padding: 24px;
+    height: 100px;
 }
 
 .blog-article {
@@ -98,6 +105,7 @@ textarea::placeholder {
     align-items: center;
     width: 300px;
     margin: auto;
+    padding-bottom: 24px;
 }
 
 #image-upload-btn {
