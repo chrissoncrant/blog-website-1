@@ -22,18 +22,24 @@ export function createCard(obj) {
     const cardContents = createElement('div', 'blog-card-description')
     const cardImage = createElement('img', 'card-image');
     const cardTitle = createElement('h2', null);
+    const cardPublished = createElement('p', 'card-publish-date')
+    const date = createElement('span', null);
     const cardDescription = createElement('p', null);
     const cardReadButton = createElement('a', ['btn-1', 'read-btn'])
     
-    let {bannerImage, title, description, href} = obj;
+    let {bannerImage, title, description, href, publishedAt} = obj;
 
     cardImage.setAttribute('src', bannerImage);
 
     cardTitle.textContent = title;
 
+    cardPublished.textContent = 'Published ';
+    date.textContent = publishedAt;
+    cardPublished.appendChild(date);
+
     cardDescription.textContent = description;
 
-    cardContents.append(cardImage, cardTitle, cardDescription);
+    cardContents.append(cardImage, cardTitle, cardPublished, cardDescription);
 
     cardReadButton.setAttribute('href', href);
     cardReadButton.textContent = 'Read';

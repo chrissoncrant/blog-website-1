@@ -95,6 +95,7 @@ function setImageElement(alt, src) {
     imgEl.setAttribute('alt', alt);
     imgEl.setAttribute('src', src);
     imgEl.classList.add('article-image');
+    
     blogArticle.appendChild(imgEl);
 }
 
