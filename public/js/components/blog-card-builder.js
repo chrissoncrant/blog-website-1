@@ -3,8 +3,6 @@ import { doc, getDoc, getDocs, collection } from "https://www.gstatic.com/fireba
 
 const blogCardsDiv = document.querySelector(".blog-cards-section");
 
-// console.log(cardReadButton);
-
 function createElement(type, className) {
     let el = document.createElement(type);
     if (className) {
@@ -41,6 +39,7 @@ export function createCard(obj) {
     cardReadButton.textContent = 'Read';
 
     cardContainer.append(cardContents, cardReadButton);
+    console.log(cardContainer);
 
     blogCardsDiv.appendChild(cardContainer);
 }
