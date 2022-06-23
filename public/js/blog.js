@@ -32,11 +32,8 @@ function setUpBlog(blogObj) {
 }
 
 function addArticle(articleEl, articleContent) {
-    console.log(articleContent);
     
     articleContent = articleContent.split('\n').filter(item => item.length);
-
-    console.log(articleContent);
 
     articleContent.map(item => {
         if (item[0] === '#') {
