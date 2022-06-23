@@ -28,10 +28,10 @@ function setUpBlog(blogObj) {
     banner.style.backgroundImage = `url(${bannerImage})`;
     blogTitle.textContent = title;
     publishDate.textContent = publishedAt;
-    addArticle(blogArticle, article);
+    addArticle(article);
 }
 
-function addArticle(articleEl, articleContent) {
+function addArticle(articleContent) {
     
     articleContent = articleContent.split('\n').filter(item => item.length);
 
