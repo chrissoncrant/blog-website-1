@@ -1,6 +1,12 @@
 # My Blog
 
-This is a full-stack website utilizing Nodejs for a blog. 
+## Description
+This is a practice blog site. The purpose is to explore certain functionalities such as:
+	- uploading to a server 
+	- dynamically loading websites from a database
+	- Reading and writing to the Firebase Firestore database
+
+Ultimately I would want to implement something like this to my main website when that gets built.
 
 # Blog Website Notes
 ## Resources
