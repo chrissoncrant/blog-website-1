@@ -56,7 +56,6 @@ async function getCollections() {
     querySnapshot.forEach(doc => {
         let obj = doc.data();
         obj.href = doc.id;
-        console.log(obj);
         createCard(obj);
     })
 }
