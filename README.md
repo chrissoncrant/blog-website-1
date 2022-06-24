@@ -8,7 +8,6 @@ This is a practice blog site. The purpose is to explore certain functionalities 
 
 Ultimately I would want to implement something like this to my main website when that gets built.
 
-# Blog Website Notes
 ## Resources
 - The project source: [FullStack - How to create a working blogging website with pure HTML, CSS and JS in 2021. - DEV Community](https://dev.to/kunaal438/fullstack-how-to-create-a-working-blogging-website-with-pure-html-css-and-js-in-2021-9di)
 - Firebase Sources:
