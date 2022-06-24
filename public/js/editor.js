@@ -15,64 +15,12 @@ let bannerPath;
 let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 bannerImageInput.addEventListener('change', () => {
-    uploadImage(bannerImageInput, "banner");
+    uploadImage(bannerImageInput, 'banner');
 });
 
 articleImageInput.addEventListener('change', () => {
     uploadImage(articleImageInput, 'article');
 })
-
-function addImage(imagePath, alt) {
-    console.log('image path', imagePath);
-    
-    let cursorPosition = articleField.selectionStart;
-    //markdown syntax for the image:
-    let textToInsert = `\r![${alt}](${imagePath})]\r`;
-    console.log('to insert', textToInsert)
-
-    //adding the image's markdown syntax to the article at the cursor location:
-    articleField.value = articleField.value.slice(0, cursorPosition) + textToInsert + articleField.value.slice(cursorPosition);
-}
-
-function isValidImagePath(path) {
-    return path.indexOf(' ') === -1 ? true : false;
-}
-
-function uploadImage(uploadFile, uploadType) {
-    const [file] = uploadFile.files;
-    
-
-    if (file && file.type.includes('image')) {
-        const formData = new FormData();
-        formData.append('image', file);
-        if (!isValidImagePath(formData.get('image').name)) {
-            alert('Invalid file name: Remove space from the name.');
-            return
-        };
-        fetch('/upload', {
-            method: 'post',
-            body: formData
-        })
-            .then(res => {
-                return res.json();
-            })
-            .then(imageFilePath => {
-                
-                if (uploadType === 'article') {
-                    addImage(imageFilePath, file.name);
-
-                } else {
-
-                    bannerPath = `${location.origin}/${imageFilePath}`;
-                    
-                    console.log('banner path:', bannerPath);
-                    bannerContainer.style.backgroundImage = `url(${bannerPath})`;
-                }
-            })
-    } else {
-        alert('Upload images only...');
-    }
-}
 
 publishBtn.addEventListener('click', () => {
     if(articleField.value.length && titleField.value.length) {
@@ -104,3 +52,56 @@ publishBtn.addEventListener('click', () => {
                 })
     }
 })
+
+
+function uploadImage(uploadFile, uploadType) {
+    const [file] = uploadFile.files;
+    
+    if (file && file.type.includes('image')) {
+        const formData = new FormData();
+        formData.append('image', file);
+        if (!isValidImagePath(formData.get('image').name)) {
+            alert('Invalid file name: Remove space from the name.');
+            return
+        };
+        fetch('/upload', {
+            method: 'post',
+            body: formData
+        })
+            .then(res => {
+                return res.json();
+            })
+            .then(imageFilePath => {
+                
+                if (uploadType === 'article') {
+                    addImageToArticle(imageFilePath, file.name);
+
+                } else {
+
+                    bannerPath = `${location.origin}/${imageFilePath}`;
+                    
+                    console.log('banner path:', bannerPath);
+                    bannerContainer.style.backgroundImage = `url(${bannerPath})`;
+                }
+            })
+    } else {
+        alert('Upload images only...');
+    }
+}
+
+    function addImageToArticle(imagePath, alt) {
+        console.log('image path', imagePath);
+        
+        let cursorPosition = articleField.selectionStart;
+        //markdown syntax for the image:
+        let textToInsert = `\r![${alt}](${imagePath})]\r`;
+        console.log('to insert', textToInsert)
+
+        //adding the image's markdown syntax to the article at the cursor location:
+        articleField.value = articleField.value.slice(0, cursorPosition) + textToInsert + articleField.value.slice(cursorPosition);
+    }
+
+    function isValidImagePath(path) {
+        return path.indexOf(' ') === -1 ? true : false;
+    }
+
